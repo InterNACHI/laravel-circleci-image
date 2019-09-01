@@ -18,7 +18,6 @@ RUN sudo -E apt-get install -y \
 		--with-png-dir=/usr/include/ \
 		--with-jpeg-dir=/usr/include/ \
 	&& sudo -E docker-php-ext-install gd \
-	&& sudo -E docker-php-ext-install exif \
 	&& sudo -E pecl install xdebug \
 	&& sudo -E pecl install imagick \
 	&& sudo -E docker-php-ext-enable imagick \
