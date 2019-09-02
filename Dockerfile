@@ -1,4 +1,4 @@
-FROM circleci/php:7.3-cli-stretch-node
+FROM circleci/php:7.3-stretch-node-browsers
 
 MAINTAINER Chris Morrell
 
