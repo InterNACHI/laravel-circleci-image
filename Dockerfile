@@ -16,6 +16,7 @@ RUN apt-get update \
 		mysql-client \
 	&& docker-php-ext-install -j$(nproc) exif \
 	&& docker-php-ext-install -j$(nproc) pdo_mysql \
+	&& docker-php-ext-install -j$(nproc) bcmath \
 	&& docker-php-ext-configure opcache \
 	&& docker-php-ext-install opcache \
 	&& docker-php-ext-configure gd \
