@@ -12,6 +12,7 @@ RUN apt-get update \
 		libzip-dev \
 		libjpeg62-turbo-dev \
 		libfreetype6-dev \
+		libmagickwand-dev \
 		mysql-client \
 	&& docker-php-ext-install -j$(nproc) exif \
 	&& docker-php-ext-install -j$(nproc) pdo_mysql \
@@ -24,6 +25,8 @@ RUN apt-get update \
 		--with-freetype-dir \
 		--with-zlib-dir \
 	&& docker-php-ext-install -j$(nproc) gd \
+	&& pecl install imagick \
+	&& docker-php-ext-enable imagick \
 	&& rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 COPY "optimizations.ini" "/usr/local/etc/php/conf.d/optimizations.ini"
