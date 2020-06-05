@@ -1,4 +1,4 @@
-FROM circleci/php:7.3-stretch-node-browsers
+FROM circleci/php:7.4-buster-node-browsers
 
 MAINTAINER Chris Morrell
 
@@ -13,18 +13,16 @@ RUN apt-get update \
 		libjpeg62-turbo-dev \
 		libfreetype6-dev \
 		libmagickwand-dev \
-		mysql-client \
+		mariadb-client \
 	&& docker-php-ext-install -j$(nproc) exif \
 	&& docker-php-ext-install -j$(nproc) pdo_mysql \
 	&& docker-php-ext-install -j$(nproc) bcmath \
 	&& docker-php-ext-configure opcache \
 	&& docker-php-ext-install opcache \
 	&& docker-php-ext-configure gd \
-		--with-gd \
-		--with-png-dir \
-		--with-jpeg-dir \
-		--with-freetype-dir \
-		--with-zlib-dir \
+		--enable-gd \
+		--with-jpeg \
+		--with-freetype \
 	&& docker-php-ext-install -j$(nproc) gd \
 	&& pecl install imagick \
 	&& docker-php-ext-enable imagick \
