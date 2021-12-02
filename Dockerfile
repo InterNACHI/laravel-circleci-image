@@ -25,7 +25,9 @@ RUN apt-get update \
 		--with-freetype \
 	&& docker-php-ext-install -j$(nproc) gd \
 	&& pecl install imagick \
+	&& pecl install redis \
 	&& docker-php-ext-enable imagick \
+	&& docker-php-ext-enable redis \
 	&& rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 COPY "optimizations.ini" "/usr/local/etc/php/conf.d/optimizations.ini"
