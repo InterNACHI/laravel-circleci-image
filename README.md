@@ -14,6 +14,6 @@ To push and tag the current local dev build:
 
 ```
 docker tag internachi/laravel-circleci-image:dev \
-    internachi/laravel-circleci-image:7.4-latest \
-    && docker push internachi/laravel-circleci-image:7.4-latest
+    internachi/laravel-circleci-image:8.0-latest \
+    && docker push internachi/laravel-circleci-image:8.0-latest
 ```

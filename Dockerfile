@@ -1,4 +1,4 @@
-FROM circleci/php:7.4-buster-node-browsers
+FROM circleci/php:8.0-buster-node-browsers
 
 MAINTAINER Chris Morrell
 
